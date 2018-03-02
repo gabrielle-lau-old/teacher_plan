@@ -1,6 +1,6 @@
 class ActionCommentsController < ApplicationController
   def index
-    @action_comments = ActionComment.all
+    @action_comments = ActionComment.page(params[:page]).per(10)
 
     render("action_comments/index.html.erb")
   end
