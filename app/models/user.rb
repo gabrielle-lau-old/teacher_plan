@@ -18,6 +18,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :trainee_improvements_plans,
+             :through => :collaborations,
+             :source => :improvement
+
   # Validations
 
   validates :first_name, :presence => true

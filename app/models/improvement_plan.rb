@@ -12,6 +12,10 @@ class ImprovementPlan < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :coaches,
+             :through => :leaderships,
+             :source => :user
+
   # Validations
 
   validates :user_id, :presence => true
