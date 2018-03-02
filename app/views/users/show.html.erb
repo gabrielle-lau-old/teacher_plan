@@ -26,3 +26,251 @@
     </div>
   </div>
 </div>
+
+<!-- A User has many improvement_plans -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Improvement Plans
+      </li>
+
+      <% @user.improvement_plans.each do |improvement_plan| %>
+        <li class="list-group-item">
+          <a href="/improvement_plans/<%= improvement_plan.id %>">
+            <%= improvement_plan.state %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/improvement_plans/<%= improvement_plan.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/improvement_plans/<%= improvement_plan.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_improvement_plan/<%= improvement_plan.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many goals -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Goals
+      </li>
+
+      <% @user.goals.each do |goal| %>
+        <li class="list-group-item">
+          <a href="/goals/<%= goal.id %>">
+            <%= goal.description %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/goals/<%= goal.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/goals/<%= goal.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_goal/<%= goal.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many collaborations -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Collaborations
+      </li>
+
+      <% @user.collaborations.each do |collaboration| %>
+        <li class="list-group-item">
+          <a href="/collaborations/<%= collaboration.id %>">
+            <%= collaboration.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/collaborations/<%= collaboration.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/collaborations/<%= collaboration.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_collaboration/<%= collaboration.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many goal_comments -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Goal Comments
+      </li>
+
+      <% @user.goal_comments.each do |goal_comment| %>
+        <li class="list-group-item">
+          <a href="/goal_comments/<%= goal_comment.id %>">
+            <%= goal_comment.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/goal_comments/<%= goal_comment.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/goal_comments/<%= goal_comment.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_goal_comment/<%= goal_comment.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many action_comments -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Action Comments
+      </li>
+
+      <% @user.action_comments.each do |action_comment| %>
+        <li class="list-group-item">
+          <a href="/action_comments/<%= action_comment.id %>">
+            <%= action_comment.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/action_comments/<%= action_comment.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/action_comments/<%= action_comment.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_action_comment/<%= action_comment.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many trainee_improvements_plans -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Trainee Improvements Plans
+      </li>
+
+      <% @user.trainee_improvements_plans.each do |improvement_plan| %>
+        <li class="list-group-item">
+          <a href="/improvement_plans/<%= improvement_plan.id %>">
+            <%= improvement_plan.state %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/improvement_plans/<%= improvement_plan.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/improvement_plans/<%= improvement_plan.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_improvement_plan/<%= improvement_plan.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many trainees -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Trainees
+      </li>
+
+      <% @user.trainees.each do |user| %>
+        <li class="list-group-item">
+          <a href="/users/<%= user.id %>">
+            <%= user.first_name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/users/<%= user.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/users/<%= user.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_user/<%= user.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many coaches -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Coaches
+      </li>
+
+      <% @user.coaches.each do |user| %>
+        <li class="list-group-item">
+          <a href="/users/<%= user.id %>">
+            <%= user.first_name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/users/<%= user.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/users/<%= user.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_user/<%= user.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
