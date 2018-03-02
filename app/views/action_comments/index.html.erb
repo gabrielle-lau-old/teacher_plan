@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    Action comments
+    <a href="/action_comments/new" class="btn btn-lg btn-success">New Action comment</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>User</th>
+        <th>Action step</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @action_comments.each do |action_comment| %>
+      <tr>
+        <td><%= action_comment.user_id %></td>
+        <td><%= action_comment.action_step_id %></td>
+        <td>
+          <a href="/action_comments/<%= action_comment.id %>" class="btn btn-primary">Show</a>
+          <a href="/action_comments/<%= action_comment.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_action_comment/<%= action_comment.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

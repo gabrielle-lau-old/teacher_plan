@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Action_comment resource:
+  # CREATE
+  get "/action_comments/new", :controller => "action_comments", :action => "new"
+  post "/create_action_comment", :controller => "action_comments", :action => "create"
+
+  # READ
+  get "/action_comments", :controller => "action_comments", :action => "index"
+  get "/action_comments/:id", :controller => "action_comments", :action => "show"
+
+  # UPDATE
+  get "/action_comments/:id/edit", :controller => "action_comments", :action => "edit"
+  post "/update_action_comment/:id", :controller => "action_comments", :action => "update"
+
+  # DELETE
+  get "/delete_action_comment/:id", :controller => "action_comments", :action => "destroy"
+  #------------------------------
+
   # Routes for the Goal_comment resource:
   # CREATE
   get "/goal_comments/new", :controller => "goal_comments", :action => "new"
