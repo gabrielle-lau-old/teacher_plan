@@ -22,7 +22,7 @@
         <td><%= goal.user.first_name %></td>
         <td><%= goal.action_step %></td>
         <td><%= goal.comments %></td>
-        <td><%= goal.improvement_plan_id %></td>
+        <td><%= goal.improvement_plan.state %></td>
         <td><%= goal.description %></td>
         <td>
           <a href="/goals/<%= goal.id %>" class="btn btn-primary">Show</a>
