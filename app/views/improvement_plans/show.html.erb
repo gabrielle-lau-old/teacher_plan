@@ -9,7 +9,13 @@
       <dd><%= @improvement_plan.state %></dd>
 
       <dt>User</dt>
-      <dd><%= @improvement_plan.user_id %></dd>
+      <dd>
+        <% if @improvement_plan.user.present? %>
+          <a href="/users/<%= @improvement_plan.user_id %>">
+            <%= @improvement_plan.user.first_name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Comments</dt>
       <dd><%= @improvement_plan.comments %></dd>

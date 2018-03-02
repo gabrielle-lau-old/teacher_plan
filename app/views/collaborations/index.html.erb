@@ -16,8 +16,20 @@
 
       <% @collaborations.each do |collaboration| %>
       <tr>
-        <td><%= collaboration.user.first_name %></td>
-        <td><%= collaboration.improvement.state %></td>
+        <td>
+          <% if collaboration.user.present? %>
+            <a href="/users/<%= collaboration.user.id %>">
+              <%= collaboration.user.first_name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if collaboration.improvement.present? %>
+            <a href="/improvement_plans/<%= collaboration.improvement.id %>">
+              <%= collaboration.improvement.state %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/collaborations/<%= collaboration.id %>" class="btn btn-primary">Show</a>
           <a href="/collaborations/<%= collaboration.id %>/edit" class="btn btn-warning">Edit</a>

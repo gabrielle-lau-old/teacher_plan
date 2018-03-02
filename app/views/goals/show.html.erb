@@ -6,7 +6,13 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>User</dt>
-      <dd><%= @goal.user_id %></dd>
+      <dd>
+        <% if @goal.user.present? %>
+          <a href="/users/<%= @goal.user_id %>">
+            <%= @goal.user.first_name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Action step</dt>
       <dd><%= @goal.action_step %></dd>
@@ -15,7 +21,13 @@
       <dd><%= @goal.comments %></dd>
 
       <dt>Improvement plan</dt>
-      <dd><%= @goal.improvement_plan_id %></dd>
+      <dd>
+        <% if @goal.improvement_plan.present? %>
+          <a href="/improvement_plans/<%= @goal.improvement_plan_id %>">
+            <%= @goal.improvement_plan.state %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Description</dt>
       <dd><%= @goal.description %></dd>

@@ -18,7 +18,13 @@
       <% @improvement_plans.each do |improvement_plan| %>
       <tr>
         <td><%= improvement_plan.state %></td>
-        <td><%= improvement_plan.user.first_name %></td>
+        <td>
+          <% if improvement_plan.user.present? %>
+            <a href="/users/<%= improvement_plan.user.id %>">
+              <%= improvement_plan.user.first_name %>
+            </a>
+          <% end %>
+        </td>
         <td><%= improvement_plan.comments %></td>
         <td>
           <a href="/improvement_plans/<%= improvement_plan.id %>" class="btn btn-primary">Show</a>

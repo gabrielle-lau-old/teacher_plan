@@ -16,8 +16,20 @@
 
       <% @action_comments.each do |action_comment| %>
       <tr>
-        <td><%= action_comment.user.first_name %></td>
-        <td><%= action_comment.action_step.description %></td>
+        <td>
+          <% if action_comment.user.present? %>
+            <a href="/users/<%= action_comment.user.id %>">
+              <%= action_comment.user.first_name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if action_comment.action_step.present? %>
+            <a href="/action_steps/<%= action_comment.action_step.id %>">
+              <%= action_comment.action_step.description %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/action_comments/<%= action_comment.id %>" class="btn btn-primary">Show</a>
           <a href="/action_comments/<%= action_comment.id %>/edit" class="btn btn-warning">Edit</a>
