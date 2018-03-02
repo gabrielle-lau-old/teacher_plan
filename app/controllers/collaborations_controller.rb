@@ -1,6 +1,7 @@
 class CollaborationsController < ApplicationController
   def index
-    @collaborations = Collaboration.page(params[:page]).per(10)
+    @q = Collaboration.ransack(params[:q])
+    @collaborations = @q.result(:distinct => true).includes(:user, :improvement).page(params[:page]).per(10)
 
     render("collaborations/index.html.erb")
   end
