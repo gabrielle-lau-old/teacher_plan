@@ -1,6 +1,10 @@
 class ImprovementPlan < ApplicationRecord
   # Direct associations
 
+  has_many   :leaderships,
+             :class_name => "Collaboration",
+             :dependent => :destroy
+
   has_many   :goals,
              :dependent => :destroy
 
