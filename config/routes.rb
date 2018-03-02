@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Collaboration resource:
+  # CREATE
+  get "/collaborations/new", :controller => "collaborations", :action => "new"
+  post "/create_collaboration", :controller => "collaborations", :action => "create"
+
+  # READ
+  get "/collaborations", :controller => "collaborations", :action => "index"
+  get "/collaborations/:id", :controller => "collaborations", :action => "show"
+
+  # UPDATE
+  get "/collaborations/:id/edit", :controller => "collaborations", :action => "edit"
+  post "/update_collaboration/:id", :controller => "collaborations", :action => "update"
+
+  # DELETE
+  get "/delete_collaboration/:id", :controller => "collaborations", :action => "destroy"
+  #------------------------------
+
   # Routes for the Action_step resource:
   # CREATE
   get "/action_steps/new", :controller => "action_steps", :action => "new"
