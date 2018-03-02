@@ -69,6 +69,35 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_action_comment" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :first_name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for action_step_id -->
+      <div class="form-group">
+        <label for="action_step_id" class="control-label">
+          Action step
+        </label>
+
+        <%= select_tag(:action_step_id, options_from_collection_for_select(ActionStep.all, :id, :description), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Action Comment
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

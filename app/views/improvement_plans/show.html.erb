@@ -59,6 +59,62 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_goal" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :first_name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for action_step -->
+      <div class="form-group">
+        <label for="action_step" class="control-label">
+          Action step
+        </label>
+
+        <input type="text" id="action_step" name="action_step" placeholder="Action step" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for comments -->
+      <div class="form-group">
+        <label for="comments" class="control-label">
+          Comments
+        </label>
+
+        <input type="text" id="comments" name="comments" placeholder="Comments" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for improvement_plan_id -->
+      <div class="form-group">
+        <label for="improvement_plan_id" class="control-label">
+          Improvement plan
+        </label>
+
+        <%= select_tag(:improvement_plan_id, options_from_collection_for_select(ImprovementPlan.all, :id, :state), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <input type="text" id="description" name="description" placeholder="Description" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Goal
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -90,6 +146,35 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_collaboration" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :first_name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for improvement_plan_id -->
+      <div class="form-group">
+        <label for="improvement_plan_id" class="control-label">
+          Improvement plan
+        </label>
+
+        <%= select_tag(:improvement_plan_id, options_from_collection_for_select(ImprovementPlan.all, :id, :state), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Collaboration
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
