@@ -17,7 +17,7 @@
       <% @action_comments.each do |action_comment| %>
       <tr>
         <td><%= action_comment.user.first_name %></td>
-        <td><%= action_comment.action_step_id %></td>
+        <td><%= action_comment.action_step.description %></td>
         <td>
           <a href="/action_comments/<%= action_comment.id %>" class="btn btn-primary">Show</a>
           <a href="/action_comments/<%= action_comment.id %>/edit" class="btn btn-warning">Edit</a>
