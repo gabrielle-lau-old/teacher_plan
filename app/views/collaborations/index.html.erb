@@ -17,7 +17,7 @@
       <% @collaborations.each do |collaboration| %>
       <tr>
         <td><%= collaboration.user.first_name %></td>
-        <td><%= collaboration.improvement_plan_id %></td>
+        <td><%= collaboration.improvement.state %></td>
         <td>
           <a href="/collaborations/<%= collaboration.id %>" class="btn btn-primary">Show</a>
           <a href="/collaborations/<%= collaboration.id %>/edit" class="btn btn-warning">Edit</a>
