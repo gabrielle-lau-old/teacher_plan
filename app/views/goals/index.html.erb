@@ -19,7 +19,7 @@
 
       <% @goals.each do |goal| %>
       <tr>
-        <td><%= goal.user_id %></td>
+        <td><%= goal.user.first_name %></td>
         <td><%= goal.action_step %></td>
         <td><%= goal.comments %></td>
         <td><%= goal.improvement_plan_id %></td>
