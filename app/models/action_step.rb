@@ -5,4 +5,6 @@ class ActionStep < ApplicationRecord
 
   # Validations
 
+  validates :goal_id, :presence => true
+
 end
